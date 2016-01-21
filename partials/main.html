@@ -1,0 +1,52 @@
+<div class="main-container">
+	<md-toolbar class="md-toolbar-tools md-whiteframe-z2 page-header" md-scroll-shrink>
+		<i class="fa fa-frown-o fa-2x"></i>
+		<span class="chores-title md-display-2">Chores</span>
+	</md-toolbar>
+	<div layout="row" ng-if="!mobile">
+		<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-is-locked-open="true">
+			<md-button aria-label="button" class="md-fab fab-bg-color md-fab-bottom-right" ng-click="addChoreClick($event)">
+	        	<md-icon md-svg-src="styles/images/ic_add_white_24px.svg"></md-icon>
+	        </md-button>
+			<md-content layout-padding class="bl-content">
+				<chore-brick ng-repeat="chore in choreList | filter:{sprint: '0'}"></chore-brick>
+			</md-content>
+		</md-sidenav>
+		<div style="width:100%;">
+			<div class="sprint-header md-title">
+				<md-icon md-svg-src="styles/images/ic_chevron_left_white_24px.svg" ng-click="changeSprint('decrease')"></md-icon>{{sprintHolder.displayName}}<md-icon md-svg-src="styles/images/ic_chevron_right_white_24px.svg" ng-click="changeSprint('increase')"></md-icon>
+			</div>
+			<md-content layout-padding layout="column" style="height: 88vh">
+				<div layout="row">
+					<div class="category" ng-repeat="status in statuses" ng-bind="status"></div>
+				</div>
+				<div layout="row">
+					<div class="category" ng-repeat="status in statuses">
+						<chore-brick ng-repeat="chore in choreList | filter:{sprint: sprintHolder.sprintNumber, status: status}"></chore-brick>
+					</div>
+				</div>
+			</md-content>
+		</div>
+	</div>
+	<md-content flex ng-if="mobile" style="overflow:auto; height:90vh">
+		<md-button aria-label="button" class="md-fab fab-bg-color md-fab-bottom-right" ng-click="addChoreClick($event)">
+        	<md-icon md-svg-src="styles/images/ic_add_white_24px.svg"></md-icon>
+        </md-button>
+	    <section>
+			<md-subheader>Backlog</md-subheader>
+			<md-list layout-padding>
+				<md-list-item ng-repeat="chore in choreList | filter:{sprint: '0'}">
+					<chore-brick></chore-brick>
+				</md-list-item>
+			</md-list>
+		</section>
+		<section ng-repeat="status in statuses">
+			<md-subheader>{{status}}</md-subheader>
+			<md-list layout-padding>
+				<md-list-item ng-repeat="chore in choreList | filter:{sprint: sprintHolder.sprintNumber, status: status}">
+					<chore-brick></chore-brick>
+				</md-list-item>
+			</md-list>
+		</section>
+	</md-content>
+</div>

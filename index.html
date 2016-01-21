@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" ng-app="chores">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1" />
+	<title>Let's Do Chores!</title>
+	<link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.css">
+	<link rel="stylesheet" type="text/css" href="styles/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body>
+	<ng-view></ng-view>
+</body>
+
+	<!-- Third Party Components -->
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+	<script src="bower_components/angular-material/angular-material.js"></script>
+
+	<!-- Chores App Components -->
+	<script src="app.js"></script>
+	<script src="utilitiesService.js"></script>
+	
+	<script src="choresController.js"></script>
+	<script src="choresServices.js"></script>
+	<script src="choresDirectives.js"></script>
+
+	<script src="sprint/sprintServices.js"></script>
+</html>

@@ -1,0 +1,147 @@
+$primary-color: #4CAF50;
+$dark-primary-color: #388E3C;
+$light-primary-color: #C8E6C9;
+$contrast-text-background: #FFFFFF;
+$accent-color: #FF5252;
+$divider-color: #B6B6B6;
+
+$primary-text: #212121;
+$secondary-text: #727272;
+
+html,body { min-height:100%; color:$primary-text; background-color: $contrast-text-background}
+
+
+.page-header{
+	background-color: $primary-color !important;
+	color: $contrast-text-background;
+	height: 10vh;
+}
+
+.page-header-light{
+	background-color: $light-primary-color;
+}
+
+.sprint-header{
+	background-color: $dark-primary-color;
+	color: $contrast-text-background;
+	height: 30px;
+	width: 100%;
+	text-align: center;
+}
+
+.main-container{
+	height: 100%;
+	background-color: $contrast-text-background;
+}
+
+.backlog-container{
+	//height: 650px;
+	//height: 100%;
+	position: relative;
+}
+
+.fab-bg-color{
+	background-color: $accent-color;
+}
+
+.bl-content{
+	position:relative;
+	//height: 650px;
+	height: 90vh;
+}
+
+.chores-title{
+	margin-left: 10px;
+}
+
+.backlog-brick{
+	.backlog-title{
+		height: 30px;
+		color: $primary-text;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width: 87%;
+		text-align: left;
+	}
+	height: 80px;
+	margin-bottom: 15px;
+	padding: 5px 5px 5px 5px;
+	border-color: $divider-color;
+	border-style: solid;
+	border-width: 1px;
+	color:$secondary-text;
+	overflow: hidden;
+	text-align: left
+}
+
+.backlog-card {
+	text-align: left
+}
+
+.high-priority{
+	color: red;
+}
+
+.backlog-brick.md-whiteframe-girl {
+	box-shadow: 0px 2px 4px -1px rgba(255, 0, 0, 0.2), 0px 4px 5px 0px rgba(255, 0, 0, 0.14), 0px 1px 10px 0px rgba(255, 0, 0, 0.12);
+}
+.backlog-brick.md-whiteframe-boy {
+	box-shadow: 0px 2px 4px -1px rgba(0, 0, 255, 0.2), 0px 4px 5px 0px rgba(0, 0, 255, 0.14), 0px 1px 10px 0px rgba(0, 0, 255, 0.12);
+}
+
+.add-chore-dialog{
+	width: 350px;
+	max-height: 500px;
+	margin: 5px;
+}
+
+.small-form-element{
+	width:33%;
+}
+
+.medium-form-element{
+	width: 50%;
+}
+
+.category{
+	width:25%;
+	text-align: center;
+	padding: 5px;
+}
+
+.brick-menu{
+	height: 24px !important;
+	width: 24px !important;
+	line-height: normal !important;
+	padding: 0px !important;
+	min-height: 24px !important;
+}
+
+.fa-check{
+	color: green;
+}
+
+.fa-times{
+	color: red;
+}
+
+
+// MOBILE STYLES //
+
+.mobile-categories{
+	background-color: $dark-primary-color;
+	color: $contrast-text-background;
+	height: 40px;
+	width: 100%;
+	text-align: center;
+	color: $contrast-text-background;
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	border-color: $divider-color;
+}
+
+.mobile-bl-content{
+	position:relative;
+	//height: 300px;
+	height: 80vh;
+}

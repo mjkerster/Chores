@@ -1,0 +1,37 @@
+<div class="backlog-brick md-whiteframe-z2 md-body-1">
+    <div layout="row">
+	<div class="backlog-title md-body-2" ng-bind="chore.name"></div>
+	<md-menu md-offset="-45 15" class="brick-menu">
+        <md-button aria-label="Open demo menu" class="brick-menu md-icon-button" ng-click="$mdOpenMenu($event)">
+            <md-icon md-svg-src="styles/images/ic_menu_black_24px.svg"></md-icon>
+        </md-button>
+        <md-menu-content width="2">
+        	<md-menu-item>
+            	<md-button ng-click="editChoreClick(chore, $event)">
+                    <md-icon md-svg-src="styles/images/ic_edit_black_24px.svg"></md-icon>
+                    <span md-menu-align-target>Edit</span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item ng-show="chore.sprint === 0 || chore.sprint === '0'">
+                <md-button ng-click="addToSprint(chore)">
+                    <md-icon md-svg-src="styles/images/ic_swap_horiz_black_24px.svg"></md-icon>
+                    <span md-menu-align-target>Add to Sprint</span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button>
+                    <md-icon md-svg-src="styles/images/ic_person_add_black_24px.svg"></md-icon>
+                    <span md-menu-align-target>Assign to me</span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="deleteChore(chore)">
+                    <md-icon md-svg-src="styles/images/ic_delete_black_24px.svg"></md-icon>
+                    <span md-menu-align-target>Delete</span>
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+    </div>
+	{{chore.description}}
+</div>

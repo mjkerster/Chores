@@ -1,0 +1,65 @@
+<md-card class="backlog-card">
+  <md-card-title layout="row" flex>
+    <div layout="column" flex>
+      <span class="md-title" ng-bind="chore.name"></span>
+      <span class="md-subhead" ng-bind="chore.owner"></span>
+    </div>
+    <div layout-align="end start" ng-if="chore.priority === 'High'">
+      <i class="fa fa-exclamation-circle high-priority"></i>
+    </div>
+    <!-- <div layout-align="end start">
+        <md-menu md-offset="-45 15" >
+        <md-button aria-label="Open demo menu" class="brick-menu md-icon-button" ng-click="$mdOpenMenu($event)">
+            <md-icon md-svg-src="styles/images/ic_menu_black_24px.svg"></md-icon>
+        </md-button>
+        <md-menu-content width="2">
+          <md-menu-item>
+              <md-button ng-click="editChoreClick(chore, $event)">
+                    <md-icon md-svg-src="styles/images/ic_edit_black_24px.svg"></md-icon>
+                    <span md-menu-align-target>Edit</span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item ng-show="chore.sprint === 0 || chore.sprint === '0'">
+                <md-button ng-click="addToSprint(chore)">
+                    <md-icon md-svg-src="styles/images/ic_swap_horiz_black_24px.svg"></md-icon>
+                    <span md-menu-align-target>Add to Sprint</span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button>
+                    <md-icon md-svg-src="styles/images/ic_person_add_black_24px.svg"></md-icon>
+                    <span md-menu-align-target>Assign to me</span>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="deleteChore(chore)">
+                    <md-icon md-svg-src="styles/images/ic_delete_black_24px.svg"></md-icon>
+                    <span md-menu-align-target>Delete</span>
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+
+    </div> -->
+  </md-card-title>
+  <md-card-content ng-if="chore.description">
+    <p ng-bind="chore.description">
+      
+    </p>
+  </md-card-content>
+  <md-card-actions layout="row" layout-align="end end">
+    <md-button class="md-icon-button" ng-click="editChoreClick(chore, $event)">
+                    <md-icon md-svg-src="styles/images/ic_edit_black_24px.svg"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" ng-show="chore.sprint === 0 || chore.sprint === '0'" ng-click="addToSprint(chore)">
+                    <md-icon md-svg-src="styles/images/ic_swap_horiz_black_24px.svg"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button">
+                    <md-icon md-svg-src="styles/images/ic_person_add_black_24px.svg"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" ng-click="deleteChore(chore)">
+                    <md-icon md-svg-src="styles/images/ic_delete_black_24px.svg"></md-icon>
+                </md-button>
+  </md-card-actions>
+  
+</md-card>

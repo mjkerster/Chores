@@ -1,0 +1,63 @@
+<md-dialog class="md-content-overflow" >
+  <form>
+	  <md-toolbar class="page-header">
+	    <div class="md-toolbar-tools">
+	      <h2>Add Chore</h2>
+	      <span flex></span>
+	    </div>
+	  </md-toolbar>
+	  <md-dialog-content class="add-chore-dialog">
+	    <div>
+			<md-input-container>
+		    	<label>Name</label>
+		    	<input ng-model="newChoreObj.name">
+	    	</md-input-container>
+	    	<md-input-container>
+		    	<label>Description</label>
+		    	<textarea column="1" row="3" ng-model="newChoreObj.description"></textarea>
+	    	</md-input-container>
+	    	<div layout="row">
+	    		<md-input-container class="medium-form-element">
+			    	<md-select ng-model="newChoreObj.owner" placeholder="Owner">
+					    <md-option ng-value="owner" ng-repeat="owner in owners" ng-bind="owner"></md-option>
+					</md-select>
+		    	</md-input-container>
+		    	<md-input-container class="medium-form-element">
+			    	<md-select ng-model="newChoreObj.status" placeholder="Status">
+					    <md-option ng-value="status" ng-repeat="status in statuses" ng-bind="status"></md-option>
+					</md-select>
+		    	</md-input-container>
+		    </div>
+		    <div layout="row">
+		    	<md-input-container class="small-form-element">
+			    	<md-select ng-model="newChoreObj.size" placeholder="Size">
+					    <md-option ng-value="size" ng-repeat="size in sizes" ng-bind="size"></md-option>
+					</md-select>
+				</md-input-container>
+				<md-input-container class="small-form-element">
+			    	<md-select ng-model="newChoreObj.priority" placeholder="Priority">
+					    <md-option ng-value="priority" ng-repeat="priority in priorities" ng-bind="priority"></md-option>
+					</md-select>
+				</md-input-container>
+				<md-input-container class="small-form-element">
+			    	<md-select ng-model="newChoreObj.sprint" placeholder="Sprint">
+			    		<md-option ng-value="0">Backlog</md-option>
+					    <md-option ng-value="sprint.sprintNumber" ng-repeat="sprint in sprints" ng-bind="sprint.sprintNumber"></md-option>
+					</md-select>
+				</md-input-container>
+		    </div>
+	    </div>
+	  </md-dialog-content>
+	  <md-dialog-actions layout="row">
+	    <md-button ng-click="cancel()">
+	     	<i class="fa fa-times fa-lg"></i> Cancel
+	    </md-button>
+	    <md-button ng-show="saveOrUpdate === 'save'" ng-click="saveChore(newChoreObj)" style="margin-right:20px;">
+	      	<i class="fa fa-check fa-lg"></i> Save
+	    </md-button>
+	    <md-button ng-show="saveOrUpdate === 'update'" ng-click="updateChore(newChoreObj)" style="margin-right:20px;">
+	    	<i class="fa fa-check fa-lg"></i> Update
+	    </md-button>
+	  </md-dialog-actions>
+  </form>
+</md-dialog>
